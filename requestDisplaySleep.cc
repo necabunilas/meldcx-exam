@@ -8,6 +8,7 @@
 
 NAN_METHOD(requestDisplaySleep)
 {
-    std::cout << "Request display to sleep!";
-    SendMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, (LPARAM) 2);
+    //Used PostMessage to receive a return value instead of SendMessage
+    bool ret = PostMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, (LPARAM) 2); 
+    info.GetReturnValue().Set(ret);
 }

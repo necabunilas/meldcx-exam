@@ -8,6 +8,11 @@
 
 NAN_METHOD(requestDisplayWake)
 {
-    std::cout << "Request display to wake!";
-    SendMessage(HWND_BROADCAST, WM_SYSCOMMAND, SC_MONITORPOWER, (LPARAM) -1);
+    //Used Mouse movement to simulate wake up display
+    Sleep(500);
+    mouse_event(MOUSEEVENTF_MOVE, 0, 1, 0, NULL);
+    Sleep(50);
+    mouse_event(MOUSEEVENTF_MOVE, 0, -1, 0, NULL);
+    bool ret = true; //return true to make sure that code passed here
+    info.GetReturnValue().Set(ret);
 }

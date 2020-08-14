@@ -10,6 +10,6 @@ NAN_METHOD(getLastInputTime)
     LASTINPUTINFO lastInPut;
     lastInPut.cbSize = sizeof(&lastInPut);
     GetLastInputInfo(&lastInPut);
-    int ret = GetTickCount() - lastInPut.dwTime;
+    int ret = GetTickCount() - lastInPut.dwTime; //Get milliseconds
     info.GetReturnValue().Set(ret);
 }

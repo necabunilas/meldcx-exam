@@ -10,22 +10,23 @@ function getLastInputTime(){
 }
 
 function requestDisplaySleep(){
-    index.requestDisplaySleep();
+    return index.requestDisplaySleep();
 }
 
 function requestDisplayWake() {
-    index.requestDisplayWake();
+    return index.requestDisplayWake();
 }
 
 
 console.log("Number of monitors: " + numAttachedDisplays());
 console.log("Last input time: " + getLastInputTime() + " ms");
-/*
-requestDisplaySleep();
-requestDisplayWake();
-*/
+console.log("Sleep request result: " + requestDisplaySleep());
+console.log("Wake request result: " + requestDisplayWake());
+
 
 module.exports = {
     numAttachedDisplays,
+    requestDisplaySleep,
+    requestDisplayWake,
     getLastInputTime
 }
