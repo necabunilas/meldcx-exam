@@ -17,8 +17,15 @@ function requestDisplayWake() {
     index.requestDisplayWake();
 }
 
+
 console.log("Number of monitors: " + numAttachedDisplays());
 console.log("Last input time: " + getLastInputTime() + " ms");
-
+/*
 requestDisplaySleep();
 requestDisplayWake();
+*/
+
+module.exports = {
+    numAttachedDisplays,
+    getLastInputTime
+}
